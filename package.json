@@ -1,0 +1,34 @@
+{
+  "name": "crud-api",
+  "version": "0.0.1",
+  "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "type": "module",
+  "main": "src/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexey-koran/node-crud-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "assignments"
+  ],
+  "author": "Alexey-Koran <alexey.koran@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexey-koran/node-crud-api/issues"
+  },
+  "homepage": "https://github.com/alexey-koran/node-crud-api#readme",
+  "devDependencies": {
+    "@alexey-koran/eslint-config": "^0.2.2",
+    "@alexey-koran/prettier-config": "^0.1.1",
+    "@alexey-koran/tsconfig": "^0.1.0",
+    "@types/node": "^22.7.7",
+    "prettier": "^3.3.3"
+  }
+}
