@@ -1,6 +1,8 @@
 import {
   baseConfig,
   javaScriptConfig,
+  typeScriptConfig,
+  typeScriptBaseConfig,
   supportedFileTypes,
   supportedExtensions,
 } from '@alexey-koran/eslint-config';
@@ -8,8 +10,10 @@ import {
 const config = [
   baseConfig,
   javaScriptConfig,
+  typeScriptConfig,
+  typeScriptBaseConfig,
   {
-    files: [supportedFileTypes.js],
+    files: [supportedFileTypes.js, supportedFileTypes.ts],
     settings: {
       'import/extensions': supportedExtensions.js,
       'import/parsers': {
