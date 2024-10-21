@@ -5,4 +5,4 @@ import { startServer } from './server/index.ts';
 
 const port: number = Number(env.API_PORT) || defaultServerPort;
 
-export const server = startServer(port);
+startServer(port);
