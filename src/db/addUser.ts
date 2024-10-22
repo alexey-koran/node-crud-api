@@ -3,7 +3,7 @@ import { v7 } from 'uuid';
 import type { Database } from '../types/db.ts';
 import type { User } from '../types/user.ts';
 
-export const addUser = (user: Omit<User, 'id'>, database: Database) => {
+export const addUser = (user: Omit<User, 'id'>, database: Database): Database => {
   const databaseClone = structuredClone(database);
 
   const newUser = {
