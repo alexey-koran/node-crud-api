@@ -1,9 +1,9 @@
 import { v7 } from 'uuid';
 
-import type { Database } from '../types/db.ts';
+import type { Database, DatabaseOperationReturn } from '../types/db.ts';
 import type { User } from '../types/user.ts';
 
-export const addUser = (user: Omit<User, 'id'>, database: Database): Database => {
+export const addUser = (user: Omit<User, 'id'>, database: Database): DatabaseOperationReturn => {
   const databaseClone = structuredClone(database);
 
   const newUser = {
@@ -13,5 +13,7 @@ export const addUser = (user: Omit<User, 'id'>, database: Database): Database =>
 
   databaseClone.push(newUser);
 
-  return databaseClone;
+  return {
+    database: databaseClone,
+  };
 };

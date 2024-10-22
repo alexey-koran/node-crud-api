@@ -1,5 +1,7 @@
-import type { Database } from '../types/db.ts';
+import type { Database, DatabaseOperationReturn } from '../types/db.ts';
 
-export const getUsers = (database: Database): Database => {
-  return structuredClone(database);
+export const getUsers = (database: Database): DatabaseOperationReturn => {
+  return {
+    database: structuredClone(database),
+  };
 };
