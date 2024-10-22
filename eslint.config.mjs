@@ -14,10 +14,18 @@ const config = [
   typeScriptBaseConfig,
   {
     files: [supportedFileTypes.js, supportedFileTypes.ts],
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+        projectService: {
+          defaultProject: './tsconfig.json',
+        },
+      },
+    },
     settings: {
       'import/extensions': supportedExtensions.js,
       'import/parsers': {
-        '@typescript-eslint/parser': [...supportedExtensions.ts, ...supportedExtensions.tsx],
+        '@typescript-eslint/parser': [...supportedExtensions.ts],
       },
       'import/resolver': {
         typescript: {
