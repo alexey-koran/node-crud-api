@@ -6,6 +6,7 @@ import {
   supportedFileTypes,
   supportedExtensions,
 } from '@alexey-koran/eslint-config';
+import typescriptEslint from 'typescript-eslint';
 
 const config = [
   baseConfig,
@@ -14,6 +15,20 @@ const config = [
   typeScriptBaseConfig,
   {
     files: [supportedFileTypes.js, supportedFileTypes.ts],
+    rules: {
+      '@typescript-eslint/naming-convention': [
+        ...typeScriptBaseConfig.rules['@typescript-eslint/naming-convention'],
+        {
+          selector: 'typeProperty',
+          format: ['strictCamelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+      ],
+    },
+    plugins: {
+      '@typescript-eslint': typescriptEslint.plugin,
+    },
     languageOptions: {
       parserOptions: {
         tsconfigRootDir: import.meta.dirname,
