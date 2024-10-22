@@ -10,9 +10,12 @@ import typescriptEslint from 'typescript-eslint';
 
 const config = [
   baseConfig,
-  javaScriptConfig,
   typeScriptConfig,
   typeScriptBaseConfig,
+  {
+    ...javaScriptConfig,
+    files: [supportedFileTypes.js, supportedFileTypes.ts],
+  },
   {
     files: [supportedFileTypes.js, supportedFileTypes.ts],
     rules: {
