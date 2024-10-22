@@ -5,6 +5,6 @@ import { startServer } from './server/index.ts';
 
 const apiPort = Number(env.API_PORT);
 
-const port: number = !isNaN(apiPort) ? apiPort : DEFAULT_API_PORT;
+const port: number = isNaN(apiPort) ? DEFAULT_API_PORT : apiPort;
 
 startServer(port);
